@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://2ycx2r0eyro"]
+
+[ext_resource type="PackedScene" uid="uid://dj18spkkhlkvg" path="res://misc/potion.tscn" id="1_yih0j"]
+[ext_resource type="PackedScene" uid="uid://cesy0ix8duakq" path="res://player/player.tscn" id="2_qtn21"]
+
+[node name="TestMeat" type="Node2D"]
+
+[node name="Meat" parent="." instance=ExtResource("1_yih0j")]
+position = Vector2(811, 351)
+
+[node name="Player" parent="." instance=ExtResource("2_qtn21")]
+position = Vector2(150, 353)
+speed = 3.0
+sword_damage = 2
+health = 75
+max_health = 100

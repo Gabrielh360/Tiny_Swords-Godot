@@ -1,0 +1,314 @@
+[gd_scene load_steps=19 format=3 uid="uid://b1yx2li643340"]
+
+[ext_resource type="Shader" path="res://shaders/blur_shader.gdshader" id="1_1eeh5"]
+[ext_resource type="Texture2D" uid="uid://dqi5c7t882ro7" path="res://addons/kenney_fantasy-ui-borders/PNG/Default/Panel/panel-010.png" id="1_f60xf"]
+[ext_resource type="Script" path="res://ui/menu_pause_ui.gd" id="1_lhv5j"]
+[ext_resource type="Texture2D" uid="uid://voxo4fvuxy56" path="res://addons/Button Normal.png" id="1_viwp0"]
+[ext_resource type="FontFile" uid="uid://cjebgpefph7dn" path="res://assets/fonts/SofiaPro-Condensed51.ttf" id="2_5bpnm"]
+[ext_resource type="Texture2D" uid="uid://cr73kraeq825" path="res://addons/Button Pressed.png" id="6_i52nw"]
+[ext_resource type="Texture2D" uid="uid://cjenrigebvlqq" path="res://addons/Button Hover.png" id="7_qnflj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8veik"]
+shader = ExtResource("1_1eeh5")
+shader_parameter/lod = 0.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_85g2g"]
+texture = ExtResource("1_f60xf")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(0, 0, 48, 48)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rt2sf"]
+font = ExtResource("2_5bpnm")
+font_size = 34
+font_color = Color(0.682353, 0.796078, 0.501961, 1)
+
+[sub_resource type="InputEventAction" id="InputEventAction_xti1e"]
+action = &"pause"
+
+[sub_resource type="Shortcut" id="Shortcut_fpgb2"]
+events = [SubResource("InputEventAction_xti1e")]
+
+[sub_resource type="Theme" id="Theme_cdm0l"]
+default_font = ExtResource("2_5bpnm")
+default_font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_qtv3o"]
+font = ExtResource("2_5bpnm")
+font_size = 18
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_4lb5h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background/MenuHolderContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background/Panel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.00409178, 0.0981302, 0.615686)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Background/Label:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0101a"]
+resource_name = "pause_game"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/MenuHolderContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background/Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0.00392157, 0.0980392, 0), Color(0, 0.00392157, 0.0980392, 0.615686)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background/Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xq4po"]
+resource_name = "resume_game"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background/MenuHolderContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background/Panel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0.00409178, 0.0981302, 0.615686), Color(0, 0.00392157, 0.0980392, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Background/Label:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h2s3p"]
+_data = {
+"RESET": SubResource("Animation_4lb5h"),
+"pause_game": SubResource("Animation_0101a"),
+"resume_game": SubResource("Animation_xq4po")
+}
+
+[node name="MenuPauseUI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_lhv5j")
+
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_8veik")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Background"]
+modulate = Color(0, 0.00409178, 0.0981302, 0.615686)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.0
+offset_top = -176.0
+offset_right = 167.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_85g2g")
+
+[node name="Label" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.5
+offset_top = -143.5
+offset_right = 29.5
+offset_bottom = -118.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pause"
+label_settings = SubResource("LabelSettings_rt2sf")
+
+[node name="MenuHolderContainer" type="VBoxContainer" parent="Background"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -32.0
+offset_right = 96.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="TextureButton" parent="Background/MenuHolderContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+shortcut = SubResource("Shortcut_fpgb2")
+shortcut_in_tooltip = false
+texture_normal = ExtResource("1_viwp0")
+texture_pressed = ExtResource("6_i52nw")
+texture_hover = ExtResource("7_qnflj")
+
+[node name="Label" type="Label" parent="Background/MenuHolderContainer/ResumeButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -18.5
+offset_right = 36.0
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_cdm0l")
+text = "Continuar"
+label_settings = SubResource("LabelSettings_qtv3o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="TextureButton" parent="Background/MenuHolderContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_viwp0")
+texture_pressed = ExtResource("6_i52nw")
+texture_hover = ExtResource("7_qnflj")
+
+[node name="Label" type="Label" parent="Background/MenuHolderContainer/QuitButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -18.5
+offset_right = 36.0
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_cdm0l")
+text = "Sair do game"
+label_settings = SubResource("LabelSettings_qtv3o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h2s3p")
+}
+
+[connection signal="pressed" from="Background/MenuHolderContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Background/MenuHolderContainer/QuitButton" to="." method="_on_quit_button_pressed"]

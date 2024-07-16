@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://b6085ohg0hmp8"]
+
+[ext_resource type="PackedScene" uid="uid://dj18spkkhlkvg" path="res://misc/potion.tscn" id="1_4f23s"]
+[ext_resource type="Texture2D" uid="uid://b6xgipy5iu848" path="res://assets/images/golden_potion/BigHealthPotionMoving1.png" id="2_6geqs"]
+[ext_resource type="Texture2D" uid="uid://cdmhqk6p5pocb" path="res://assets/images/golden_potion/BigHealthPotionMoving2.png" id="3_72sna"]
+[ext_resource type="Texture2D" uid="uid://dm7cdbulvuasy" path="res://assets/images/golden_potion/BigHealthPotionMoving3.png" id="4_lroab"]
+[ext_resource type="Texture2D" uid="uid://7w8qf1vkyvq0" path="res://assets/images/golden_potion/BigHealthPotionMoving4.png" id="5_ehlb4"]
+[ext_resource type="Texture2D" uid="uid://ctt8fxw2goha3" path="res://assets/images/golden_potion/BigHealthPotionMoving5.png" id="6_883vw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f37y3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6geqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_72sna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lroab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ehlb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_883vw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="GoldenPotion" instance=ExtResource("1_4f23s")]
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_f37y3")
+frame = 0
+frame_progress = 0.0
+regeneration_amount = 100

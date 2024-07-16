@@ -1,0 +1,172 @@
+[gd_scene load_steps=4 format=3 uid="uid://pyxqpocjgqc5"]
+
+[ext_resource type="Texture2D" uid="uid://b127nuiepx8fr" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_e47f0"]
+[ext_resource type="PackedScene" uid="uid://cesy0ix8duakq" path="res://player/player.tscn" id="2_qkh2y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f8me1"]
+line_spacing = 25.0
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(90, 45)
+
+[node name="WarriorBlue" type="Sprite2D" parent="."]
+position = Vector2(1769, 779)
+texture = ExtResource("1_e47f0")
+
+[node name="Label 1" type="Label" parent="WarriorBlue"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1082.0
+offset_top = -1623.0
+offset_right = -794.0
+offset_bottom = -1600.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.83808, 3.9975)
+text = "0          1         2          3          4          5"
+
+[node name="Label 2" type="Label" parent="WarriorBlue"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1188.0
+offset_top = -1493.0
+offset_right = -1168.0
+offset_bottom = -1099.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.83808, 3.9975)
+text = "0 1 2 3 4 5 6 7
+"
+label_settings = SubResource("LabelSettings_f8me1")
+autowrap_mode = 2
+
+[node name="Idle" type="Label" parent="WarriorBlue"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -1461.0
+offset_right = 38.0
+offset_bottom = -1438.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.69489, 1.59593)
+text = "Idle"
+
+[node name="Run" type="Label" parent="WarriorBlue"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -1272.0
+offset_right = 39.0
+offset_bottom = -1249.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.69489, 1.59593)
+text = "Run
+"
+
+[node name="Attack Side 1" type="Label" parent="WarriorBlue"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -1083.0
+offset_right = 109.0
+offset_bottom = -1060.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.69489, 1.59593)
+text = "Attack Side 1"
+
+[node name="Attack Side 2" type="Label" parent="WarriorBlue"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -886.0
+offset_right = 109.0
+offset_bottom = -863.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.69489, 1.59593)
+text = "Attack Side 2
+"
+
+[node name="Attack Down 1" type="Label" parent="WarriorBlue"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = -701.0
+offset_right = 115.0
+offset_bottom = -678.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.69489, 1.59593)
+text = "Attack Down 1"
+
+[node name="Attack Down 2" type="Label" parent="WarriorBlue"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -489.0
+offset_right = 102.0
+offset_bottom = -466.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.69489, 1.59593)
+text = "Attack Down 2"
+
+[node name="Attack Up 1" type="Label" parent="WarriorBlue"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -321.0
+offset_right = 102.0
+offset_bottom = -298.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.69489, 1.59593)
+text = "Attack Up 1"
+
+[node name="Attack Up 2" type="Label" parent="WarriorBlue"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -121.0
+offset_right = 102.0
+offset_bottom = -98.0002
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.69489, 1.59593)
+text = "Attack Up 2
+"
+
+[node name="Player" parent="." instance=ExtResource("2_qkh2y")]
